@@ -17,7 +17,7 @@ var ArticleSchema = new Schema({
     required: true
   },
   // `summary` is required and a type of String
-  Summary: {
+  summary: {
     type: String,
     required: true
   },
