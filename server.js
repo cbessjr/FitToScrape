@@ -57,30 +57,30 @@ app.get("/scrape", function (req, res) {
         .children("span")
         .text().trim();
 
-      if (result.title==="" || result.link==="" || result.summary==="") {
+      if (result.title === "" || result.link === "" || result.summary === "") {
 
-        console.log ("error");
+        console.log("error");
       } else {
 
-      // console.log(result.summary);
+        // console.log(result.summary);
 
-      // Create a new Article using the `result` object built from scraping
-      db.Article.create(result)
-        .then(function(dbArticle) {
-          // View the added result in the console
-          console.log(dbArticle);
-        })
-        .catch(function(err) {
-          // If an error occurred, log it
-          console.log(err);
-        });
+        // Create a new Article using the `result` object built from scraping
+        db.Article.create(result)
+          .then(function (dbArticle) {
+            // View the added result in the console
+            console.log(dbArticle);
+          })
+          .catch(function (err) {
+            // If an error occurred, log it
+            console.log(err);
+          });
       }
     });
-  
+
     // Send a message to the client
     res.send("Scrape Complete");
 
-  
+
   });
 });
 
